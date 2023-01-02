@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  vars:
+   companyName: Jaya's
+   location: Banglore
+  tasks:
+   - name: Install Apache HTTP Servers
+     yum:
+      name: httpd
+      state: latest
+   - name: start the Apache servers
+     service:
+      name: httpd
+      state: started
+      enabled: true
+   - name: copy index.html
+     template:
+      src: index.html
+      dest: /var/www/html/index.html
+   
+...

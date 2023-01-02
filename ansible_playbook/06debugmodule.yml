@@ -1,0 +1,10 @@
+---
+hosts: all
+vars:
+ name: Jayapavan
+
+tasks: 
+ - name: Display the name variable value
+   debug: 
+    var: {{name }}
+    
